@@ -1,0 +1,20 @@
+<h1><%= @student.full_name %></h1>
+
+Class of: <%= @student.grad_year %>
+
+<h3>Reviews:</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Teacher/Subject</th>
+    <th>Overall Rating</th>
+  </tr>
+  <% @student.reviews.each do |r| %>
+  <tr>
+    <td><%= link_to r.title, review_path(r) %></td>
+    <td><%= r.klass.instructor.name %>, <%= r.klass.subject.name %></td>
+    <td><%= r.overall %>/5</td>
+  </tr>
+  <% end %>
+</table>
