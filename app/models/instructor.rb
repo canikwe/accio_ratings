@@ -1,4 +1,4 @@
 class Instructor < ApplicationRecord
-  has_many :klasses
-  has_many :subjects, through: :klasses
+  has_many :klasses, dependent: :destroy
+  has_many :subjects, through: :klasses, dependent: :destroy
 end
