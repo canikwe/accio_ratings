@@ -11,12 +11,12 @@ Subject.destroy_all
 Klass.destroy_all
 Review.destroy_all
 
-harry = Student.create(first_name: "Harry", last_name: "Potter", username: "theboywholived", grad_year: 2018)
-ron = Student.create(first_name: "Ron", last_name: "Weasley", username: "bigred94", grad_year: 2018)
-fred = Student.create(first_name: "Fred", last_name: "Weasley", username: "fred", grad_year: 2015)
-george = Student.create(first_name: "George", last_name: "Weasley", username: "george", grad_year: 2015)
-hermione = Student.create(first_name: "Hermione", last_name: "Granger", username: "smarty", grad_year: 2018)
-ginny = Student.create(first_name: "Ginny", last_name: "Weasley", username: "littlered94", grad_year: 2019)
+harry = Student.create(first_name: "Harry", last_name: "Potter", username: "theboywholived", grad_year: 2018, password: "acidpops")
+ron = Student.create(first_name: "Ron", last_name: "Weasley", username: "bigred94", grad_year: 2018, password: "acidpops")
+fred = Student.create(first_name: "Fred", last_name: "Weasley", username: "fred", grad_year: 2015, password: "acidpops")
+george = Student.create(first_name: "George", last_name: "Weasley", username: "george", grad_year: 2015, password: "acidpops")
+hermione = Student.create(first_name: "Hermione", last_name: "Granger", username: "smarty", grad_year: 2018, password: "acidpops")
+ginny = Student.create(first_name: "Ginny", last_name: "Weasley", username: "littlered94", grad_year: 2019, password: "acidpops")
 
 
 flitwick = Instructor.create(name: "Professor Flitwick")

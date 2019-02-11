@@ -17,4 +17,6 @@ Class of: <%= @student.grad_year %>
     <td><%= r.overall %>/5</td>
   </tr>
   <% end %>
-</table>
+</table><br>
+
+<%= link_to "logout", logout_path, method: :delete %>
