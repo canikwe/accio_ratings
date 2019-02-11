@@ -1,0 +1,14 @@
+<h1>All Instructors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Avg Class Rating</th>
+  </tr>
+  <% @instructor.each do |i| %>
+    <tr>
+      <td><%= link_to i.name, i %></td>
+      <td><%= i.rating %></td>
+    </tr>
+  <% end %>
+</table>
