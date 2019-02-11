@@ -2,6 +2,15 @@ class ReviewsController < ApplicationController
 
 before_action :get_reviews, only: [:show]
 
+def new
+  @review = Review.new
+end
+
+def create
+  @review = Review.create(review_params)
+  redirect_to review_path(@review)
+
+end
 
 def show
 end
@@ -18,7 +27,7 @@ def get_reviews
 end
 
 def review_params
-  params.require(:review).permit(:title, :content, :overall, :difficulty, :intrigue, :recommendation, :klass, :student)
+  params.require(:review).permit(:title, :content, :overall, :difficulty, :intrigue, :recommendation, :klass_id, :student_id)
   ## Will need to check on :student param-- how can you choose who is writing the review?
 end
 
