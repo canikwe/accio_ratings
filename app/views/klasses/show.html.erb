@@ -1,0 +1,43 @@
+<h1><%= @klass.instructor.name %> | <%= @klass.subject.name %> | <%= @klass.year  %></h1>
+
+<table>
+  <tr>
+    <td>Overall</td>
+    <td><%= @klass.average_overall %></td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td><%= @klass.average_diff %></td>
+  </tr>
+  <tr>
+    <td>Intrigue</td>
+    <td><%= @klass.average_intr %></td>
+  </tr>
+  <tr>
+    <td>Would Recommend</td>
+    <td><%= @klass.average_rec %></td>
+  </tr>
+</table>
+
+<hr>
+
+<h3>Reviews</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Overall</th>
+    <th>Difficulty</th>
+    <th>Intrigue</th>
+    <th>Would Recommend</th>
+  </tr>
+  <% @klass.reviews.each do |r| %>
+    <tr>
+      <td><%= link_to r.title, r %></td>
+      <td><%= r.overall %></td>
+      <td><%= r.difficulty %></td>
+      <td><%= r.intrigue %></td>
+      <td><%= r.recommendation %></td>
+    </tr>
+  <% end %>
+</table>
