@@ -1,0 +1,14 @@
+<h1>All Subjects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Classes(s)</th>
+  </tr>
+  <% @subjects.each do |s| %>
+    <tr>
+      <td><%= link_to s.name, s %></td>
+      <td><%= s.klasses.count %></td>
+    </tr>
+  <% end %>
+</table>
