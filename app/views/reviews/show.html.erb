@@ -1,0 +1,12 @@
+<h1><%= @review.klass.subject.name %> with <%= @review.klass.instructor.name %> </h1>
+<h2>By: <%= @review.student.full_name %></h2>
+<h2><%= @review.title %></h2>
+
+
+<ul>
+  <li>Overall  <%= @review.overall %>/5</li>
+  <li>Difficulty <%= @review.difficulty %>/5  (5 is most difficult)</li>
+  <li>Intrigue <%= @review.intrigue %>/5</li>
+  <li>Would recomend? <%= @review.recommendation %>/5</li>
+</ul>
+<p><%= @review.content %></p>
