@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-before_action :get_reviews, only: [:show]
+before_action :get_reviews, only: [:show, :edit, :update, :destroy]
 
 def new
   @review = Review.new
@@ -15,6 +15,19 @@ end
 def show
 end
 
+def edit
+end
+
+def update
+  @review.update(review_params)
+  redirect_to review_path(@review)
+end
+
+def destroy
+  k = @review.klass
+  @review.destroy
+  redirect_to klass_path(k)
+end
 
 
 
