@@ -1,0 +1,29 @@
+<h1>Be the first to review a class!</h1>
+
+<%= form_for @klass do |f| %>
+    <%= f.fields_for :subject do |subj| %>
+      <%= subj.label :name, "Subject:"  %>
+      <%= subj.text_field :name, list:'subject-name' %>
+      <datalist id="subject-name">
+        <%= Subject.all.order(:name).each do |subject| %>
+        <option value="<%= subject.name %>"></option>
+        <% end %>
+      </datalist><br>
+
+    <%= f.fields_for :instructor do |inst| %>
+        <%= inst.label :name, "Instructor:"  %>
+        <%= inst.text_field :name, list:'instructor-name' %>
+        <datalist id="instructor-name">
+          <%= Instructor.all.order(:name).each do |instructor| %>
+          <option value="<%= instructor.name %>"></option>
+          <% end %>
+        </datalist><br>
+        <% end %>
+  <%= f.submit "Create Class" %>
+
+
+
+
+
+<% end %>
+<% end %>

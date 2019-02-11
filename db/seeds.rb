@@ -15,7 +15,7 @@ harry = Student.create(first_name: "Harry", last_name: "Potter", username: "theb
 ron = Student.create(first_name: "Ron", last_name: "Weasley", username: "bigred94", grad_year: 2018)
 fred = Student.create(first_name: "Fred", last_name: "Weasley", username: "fred", grad_year: 2015)
 george = Student.create(first_name: "George", last_name: "Weasley", username: "george", grad_year: 2015)
-hermoine = Student.create(first_name: "Hermione", last_name: "Granger", username: "smarty", grad_year: 2018)
+hermione = Student.create(first_name: "Hermione", last_name: "Granger", username: "smarty", grad_year: 2018)
 ginny = Student.create(first_name: "Ginny", last_name: "Weasley", username: "littlered94", grad_year: 2019)
 
 
@@ -26,7 +26,7 @@ albus = Instructor.create(name: "Professor Dumbledore")
 hagrid = Instructor.create(name: "Professor Hagrid")
 trel = Instructor.create(name: "Professor Trelawney")
 sprout = Instructor.create(name: "Professor Sprout")
-lupin = Instructor.create(name: "Professor Sprout")
+lupin = Instructor.create(name: "Professor Lupin")
 
 pot = Subject.create(name: "Intro to Potions")
 charm = Subject.create(name: "Advanced Charms")
