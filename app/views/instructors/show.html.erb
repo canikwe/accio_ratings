@@ -1,0 +1,17 @@
+<h1><%= @instructor.name %></h1>
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Year</th>
+    <th>Average Rating</th>
+  </tr>
+    <% @instructor.klasses.each do |k| %>
+    <tr>
+      <td><%= link_to k.subject.name, subject_path(k.subject) %></td>
+      <td><%= link_to k.year, k %></td>
+      <td><%= k.average_overall %></td>
+
+    </tr>
+    <% end %>
+</table>
