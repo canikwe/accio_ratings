@@ -54,7 +54,7 @@
     <th>Intrigue</th>
     <th>Would Recommend</th>
   </tr>
-  <% @klass.reviews.each do |r| %>
+  <% @klass_reviews.each do |r| %>
     <tr>
       <td><%= link_to r.title, r %></td>
       <td><%= r.overall %></td>
