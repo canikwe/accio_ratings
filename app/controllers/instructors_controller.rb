@@ -4,4 +4,8 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:id])
   end
 
+  def index
+    @instructor = Instructor.all
+  end
+
 end
