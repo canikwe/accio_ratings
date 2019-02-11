@@ -9,7 +9,8 @@ class KlassesController < ApplicationController
   end
 
   def create
-    @klass = Klass.create(class_params)
+    @klass = Klass.create(klass_params)
+    redirect_to klass_path(@klass)
   end
 
 
@@ -17,7 +18,7 @@ class KlassesController < ApplicationController
 private
 
 def klass_params
-  params.require(:klass).permit(:year, subject_attributes:[:id, :name], instructor_attributes:[:id, :name ])
+  params.require(:klass).permit(:year, :subject_id, :instructor_id)
 end
 
 
