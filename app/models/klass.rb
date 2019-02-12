@@ -47,4 +47,9 @@ class Klass < ApplicationRecord
   end
 
 
+  def self.most_frequent
+    self.all.sort_by {|klass| klass.reviews.length}[-3..-1].reverse
+  end
+
+
 end
