@@ -1,5 +1,6 @@
 <h1>Create New Instructor</h1>
 
+<%= render 'layouts/errors', input: @instructor %>
 <%= form_for @instructor do |f| %>
   <%= f.label :name, "Name" %>
   <%= f.text_field :name %><p></p>
