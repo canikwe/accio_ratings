@@ -11,7 +11,10 @@ class Review < ApplicationRecord
   # Custom Methods
   def self.recents
     self.all.order(created_at: :desc)[0,5]
+  end
 
+  def method_name
+    
   end
 
 end
