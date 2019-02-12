@@ -1,7 +1,8 @@
-<div class="error"><%= flash["notice"] %></div>
+<h2>Errors</h2>
+<%= render "layouts/errors", input: @review %>
 
-
-<%= form_for @review do |f|%>
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :klass_id %>
   <%= f.label :student_id %>
   <%= f.collection_select :student_id, Student.all, :id, :full_name %><br><br>
   <%= f.label :title, "Title:" %>
