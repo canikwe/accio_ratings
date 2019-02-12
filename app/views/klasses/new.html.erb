@@ -1,4 +1,5 @@
 <h1>Be the first to review a class!</h1>
+<%= render "layouts/errors", input: @klass %>
 
 <%= form_for @klass do |f| %>
   <%= f.label :subject_id, "Subject:"  %>
