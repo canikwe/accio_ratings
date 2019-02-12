@@ -1,12 +1,12 @@
-<h1>Be the first to review a class!</h1>
+<h1>Create a new class!</h1>
 <%= render "layouts/errors", input: @klass %>
 
 <%= form_for @klass do |f| %>
   <%= f.label :subject_id, "Subject:"  %>
-  <%= f.collection_select :subject_id, Subject.all.order(:name), :id, :name, {prompt: "Select Subject"} %><br>
+  <%= f.collection_select :subject_id, Subject.all.order(:name), :id, :name, promt: true %><br>
 
   <%= f.label :instructor_id, "Instructor:"  %>
-  <%= f.collection_select :instructor_id, Instructor.all.order(:name), :id, :name, {prompt: "Select Instructor"} %><br>
+  <%= f.collection_select :instructor_id, Instructor.all.order(:name), :id, :name %><br>
 
   <%= f.label :year, "Year:" %>
   <%= f.select :year, (1990..Time.now.year) %><p></p>

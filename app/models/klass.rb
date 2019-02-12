@@ -5,8 +5,8 @@ class Klass < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   # Validations
-  validates :year, :subject, :instructor, presence: true
-  validates :instructor, uniqueness: {scope: [:subject, :year], message: "This class already exists."}
+  # validates :year, :subject, :instructor, presence: true
+  validates :instructor, uniqueness: {scope: [:subject, :year], message: "already has a class for this subject/year."}
 
 
   # Custom Methods
