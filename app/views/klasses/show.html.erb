@@ -1,4 +1,4 @@
-<h1><%= @klass.instructor.name %> | <%= @klass.subject.name %> | <%= @klass.year  %></h1>
+<h1><%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %> | <%= link_to @klass.subject.name, subject_path(@klass.subject) %> | <%= @klass.year  %></h1>
 
 <table>
   <tr>
