@@ -1,0 +1,20 @@
+<h3>Reviews</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Overall</th>
+    <th>Difficulty</th>
+    <th>Intrigue</th>
+    <th>Would Recommend</th>
+  </tr>
+  <% @klass_reviews.each do |r| %>
+    <tr>
+      <td><%= link_to r.title, r %></td>
+      <td><%= r.overall %></td>
+      <td><%= r.difficulty %></td>
+      <td><%= r.intrigue %></td>
+      <td><%= r.recommendation %></td>
+    </tr>
+  <% end %>
+</table>
