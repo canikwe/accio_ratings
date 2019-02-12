@@ -8,7 +8,11 @@
   <% @instructor.each do |inst| %>
     <tr>
       <td><%= link_to inst.name, inst %></td>
-      <td><%= inst.rating %></td>
+      <% if inst.rating %>
+      <td><%= inst.rating.round(2) %></td>
+    <% else %>
+      <td>--</td>
+      <% end %>
     </tr>
   <% end %>
 </table>
