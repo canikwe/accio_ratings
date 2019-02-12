@@ -1,5 +1,5 @@
 <h1><%= @review.klass.subject.name %> with <%= @review.klass.instructor.name %> </h1>
-<h2>By: <%= @review.student.full_name %></h2>
+<h2>By: <%= link_to @review.student.full_name, @review.student %></h2>
 <h2><%= @review.title %></h2>
 
 
@@ -11,5 +11,9 @@
 </ul>
 <p><%= @review.content %></p>
 
-<%= link_to "Edit Review", edit_review_path(@review)%><br>
-<%= link_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}%>
+
+<% if @review.student.id == session[:student_id] %>
+  <%= link_to "Edit Review", edit_review_path(@review)%><br>
+  <%= link_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}%>
+<% else %>
+<% end %>

@@ -9,4 +9,5 @@ class Review < ApplicationRecord
   validates :student_id, uniqueness: {scope: :klass_id, message: "You have already reviewed this class"}
 
 
+
 end

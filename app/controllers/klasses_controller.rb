@@ -9,7 +9,11 @@ class KlassesController < ApplicationController
   end
 
   def create
-    @klass = Klass.create(class_params)
+    @klass = Klass.new(klass_params)
+    if @klass.save
+      redirect_to @klass
+    else render :new
+    end
   end
 
 

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :get_reviews, only: [:show, :edit, :update, :destroy]
+  before_action :get_reviews, only: [:show, :edit, :update, :destroy, :rating]
 
   def new
     @review = Review.new

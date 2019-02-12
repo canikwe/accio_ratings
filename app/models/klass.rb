@@ -1,11 +1,15 @@
 class Klass < ApplicationRecord
+  # Associations
   belongs_to :subject
   belongs_to :instructor
   has_many :reviews, dependent: :destroy
-  # accepts_nested_attributes_for :instructor
-  # accepts_nested_attributes_for :subject
+
+  # Validations
+  validates :year, :subject, :instructor, presence: true
+  validates :instructor, uniqueness: {scope: [:subject, :year], message: "This class already exists."}
 
 
+  # Custom Methods
   def average_overall
     overall = self.reviews.map {|r| r.overall}
     if overall.empty?
