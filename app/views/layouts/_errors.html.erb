@@ -1,9 +1,7 @@
 <% if input.errors.any? %>
   <ul>
-    <% input.errors.values.each do |msg| %>
-      <% msg.each do |m| %>
-        <li><%= m %></li>
-      <% end %>
+    <% input.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
