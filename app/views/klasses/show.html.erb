@@ -20,7 +20,11 @@
 </table>
 
 <hr>
+<% if @klass.reviews.length == 0 %>
+<h2>Be the first to review this class!</h2>
+<% else  %>
 <h2>Submit a review for this class</h2>
+<% end %>
 <%= form_for @klass.reviews.build do |f| %>
   <%= f.hidden_field :klass_id %>
   <%= f.label :student_id %>
@@ -41,5 +45,5 @@
 <% end %>
 
 <% if @klass.reviews.length == 0 %>
-<%=   render 'review_list' %>
+<%=render 'review_list' %>
 <% end  %>

@@ -1,6 +1,10 @@
-<h1><%= link_to @review.klass.subject.name, subject_path(@review.klass.subject) %> with <%= link_to @review.klass.instructor.name, instructor_path(@review.klass.instructor) %> </h1>
+<h1><%= @review.title %></h1>
 <h2>By: <%= link_to @review.student.full_name, @review.student %></h2>
-<h2><%= @review.title %></h2>
+<h3><%= @review.klass.subject.name %>, <%= @review.klass.year %> with <%=@review.klass.instructor.name%></h3>
+
+
+
+
 
 
 <ul>
