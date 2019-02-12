@@ -1,4 +1,6 @@
 class SubjectsController < ApplicationController
+  before_action :rootmaker
+
 
   def show
     @subject = Subject.find(params[:id])

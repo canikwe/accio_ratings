@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
 
   before_action :get_student, only: [:show, :destroy, :edit, :update]
+  before_action :rootmaker
+
   def show
   end
 
@@ -17,6 +19,10 @@ class StudentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def homepage
+
   end
 
   private

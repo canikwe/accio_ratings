@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Instructor</th>
+    <th>Year</th>
+    <th>Average Overall Rating</th>
+  </tr>
+<% @subject.klasses.each do |klass| %>
+  <tr>
+    <td><%= link_to klass.instructor.name, instructor_path(klass.instructor)%> </td>
+    <td><%= link_to klass.year, klass_path(klass)%></td>
+    <td><%= klass.average_overall %></td>
+  </tr>
+<% end  %>
+</table>

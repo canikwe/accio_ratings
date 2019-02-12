@@ -5,10 +5,10 @@
     <th>Name</th>
     <th>Avg Class Rating</th>
   </tr>
-  <% @instructor.each do |i| %>
+  <% @instructor.each do |inst| %>
     <tr>
-      <td><%= link_to i.name, i %></td>
-      <td><%= i.rating %></td>
+      <td><%= link_to inst.name, inst %></td>
+      <td><%= inst.rating %></td>
     </tr>
   <% end %>
 </table>

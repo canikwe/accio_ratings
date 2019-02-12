@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
 
   before_action :get_reviews, only: [:show, :edit, :update, :destroy, :rating]
+  before_action :rootmaker
+
 
   def new
     @review = Review.new

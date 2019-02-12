@@ -4,6 +4,9 @@ class Instructor < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def rating
-    self.klasses.map {|k| k.average_overall}.inject(:+)
+    if !self.klasses.empty?
+      rate = self.klasses.map {|k| k.average_overall}.select {|rating| rating.is_a?(Float)}
+      (rate.inject(:+)) / (rate.length)
+    end
   end
 end

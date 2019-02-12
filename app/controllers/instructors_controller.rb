@@ -1,4 +1,6 @@
 class InstructorsController < ApplicationController
+  before_action :rootmaker
+
 
   def show
     @instructor = Instructor.find(params[:id])

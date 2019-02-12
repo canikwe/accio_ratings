@@ -1,4 +1,6 @@
 class KlassesController < ApplicationController
+  before_action :rootmaker
+
   def show
     @klass = Klass.find(params[:id])
     @klass_reviews = @klass.reviews.select {|r| r.id}
