@@ -37,7 +37,7 @@
   <%= f.select :recommendation, (1..5) %><br><br>
   <%= f.label :content, "Write your review:" %><br><br>
   <%= f.text_area :content %><br><br>
-  <%= f.submit %>
+  <%= f.submit "Submit Review"%>
 <% end %>
 
 <% if @klass.reviews.length == 0 %>
