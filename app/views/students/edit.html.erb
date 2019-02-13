@@ -1,17 +1,18 @@
-<h1>Create a new user or <%= link_to "login", login_path %></h1>
 
-<% if @student.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@student.errors.count, "error") %>
-      prohibited your account from being updated:
-    </h2>
-    <ul>
-    <% @student.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
 
-<%= render 'student_form' %>
+
+
+
+<div class="container jumbotron" id="center-div">
+
+<div class="row justify-content-md-center">
+<h1>Edit your profile</h1>
+</div>
+
+<%= render "student_errors" %>
+
+<%= render "student_form" %>
+
+
+</div>
+</div>

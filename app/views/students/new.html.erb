@@ -4,86 +4,10 @@
 <h1>Create a new user!</h1>
 </div>
 
-<% if @student.errors.any? %>
-  <div class ="justify-content-md-center" id="error_explanation">
-    <div class = "row">
-      <div class="col-sm-12">
-        <p class="text-danger" id="padleft"><%= pluralize(@student.errors.count, "error") %>
-      prohibited your account from being created:</p>
-    </div>
-    </div>
-    <ul>
-    <% @student.errors.full_messages.each do |msg| %>
-      <li class ='text-danger'><%= msg %></li>
-    <% end %>
-    </ul>
+<%= render "student_errors" %>
 
-  </div>
-<% end %>
-<div class="row justify-content-md-center">
+<%= render "student_form" %>
 
-
-
-<%= form_for @student do |f| %>
-<div class="row">
-
-  <div class="col-sm-4">
-    <%= f.label :first_name, "First Name:"  %>
-  </div>
-
-  <div class="col-sm-4">
-    <%= f.text_field :first_name %><br>
-  </div>
-
-</div>
-<div class="row">
-  <div class="col-sm-4">
-  <%= f.label :last_name, "Last Name:" %>
-  </div>
-
-  <div class="col-sm-4">
-  <%= f.text_field :last_name  %><br>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-sm-4">
-  <%= f.label :username, "Username:"%>
-  </div>
-
-  <div class="col-sm-4">
-  <%= f.text_field :username %>
-  </div>
-
-</div>
-
-    <%= f.label :grad_year, "Graduation Year:"%>
-    <%= f.select :grad_year, (1986..Time.now.year+10)%><br>
-
-    <div class="row">
-      <div class="col-sm-4">
-<%= f.label :password, "Password:"%>
-      </div>
-      <div class="col-sm-4">
-        <%= f.password_field :password %>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-sm-4">
-        <%= f.label :password_confirmation, "Confirm Password:"%>
-      </div>
-      <div class="col-sm-4">
-        <%= f.password_field :password_confirmation %>
-      </div>
-    </div>
-    <%= f.submit %>
-<% end %>
-
-
-</div>
 <div class="row justify-content-md-center" id= "toppad">
   <span>Already have an account?  <%= link_to "Login", login_path %></span>
 </div>

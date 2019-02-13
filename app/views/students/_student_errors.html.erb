@@ -1,0 +1,16 @@
+<% if @student.errors.any? %>
+  <div class ="justify-content-md-center" id="error_explanation">
+    <div class = "row">
+      <div class="col-sm-12">
+        <p class="text-danger" id="padleft"><%= pluralize(@student.errors.count, "error") %>
+      prohibited your account from being created:</p>
+    </div>
+    </div>
+    <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+      <li class ='text-danger'><%= msg %></li>
+    <% end %>
+    </ul>
+
+  </div>
+<% end %>
