@@ -1,3 +1,5 @@
+reqiure "spec_helper"
+
 class StudentsController < ApplicationController
 
   before_action :get_student, only: [:show, :destroy, :edit, :update]
