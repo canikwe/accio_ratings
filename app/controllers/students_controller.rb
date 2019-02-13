@@ -1,13 +1,17 @@
 class StudentsController < ApplicationController
 
   before_action :get_student, only: [:show, :destroy, :edit, :update]
-  before_action :rootmaker
+  before_action :rootmaker, except: :new
 
   def show
   end
 
   def new
-    @student = Student.new
+    if current_student
+      redirect_to root_path
+    else
+      @student = Student.new
+    end
   end
 
   def create
@@ -22,7 +26,19 @@ class StudentsController < ApplicationController
   end
 
   def homepage
+    # renders homepage for all logged in students
+  end
 
+  def edit
+    # renders profile edit page
+  end
+
+  def update
+    if @student.save(student_params)
+      redirect_to @student
+    else
+      render :edit
+    end
   end
 
   private

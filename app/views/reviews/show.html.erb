@@ -2,11 +2,6 @@
 <h2>By: <%= link_to @review.student.full_name, @review.student %></h2>
 <h3><%= @review.klass.subject.name %>, <%= @review.klass.year %> with <%=@review.klass.instructor.name%></h3>
 
-
-
-
-
-
 <ul>
   <li>Overall  <%= @review.overall %>/5</li>
   <li>Difficulty <%= @review.difficulty %>/5  (5 is most difficult)</li>
@@ -15,9 +10,8 @@
 </ul>
 <p><%= @review.content %></p>
 
-
-<% if @review.student.id == session[:student_id] %>
-  <%= link_to "Edit Review", edit_review_path(@review)%><br>
-  <%= link_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}%>
+<% if @review.student.id == current_student.id %>
+  <%= link_to "Edit Review", edit_review_path(@review)%> | <%= link_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}%> |
 <% else %>
 <% end %>
+<%= link_to "Back to Class", @review.klass %>

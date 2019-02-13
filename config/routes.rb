@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :klasses
-  resources :instructors
-  resources :subjects
-  resources :reviews
-  resources :students
+  resources :klasses, only: [:show, :index, :new, :create]
+  resources :instructors, only: [:show, :index, :new, :create]
+  resources :subjects, only: [:show, :index, :new, :create]
+  resources :students, except: [:index]
+  resources :reviews, except: [:index]
 
   root 'students#homepage'
   get "/login", to: 'sessions#new'

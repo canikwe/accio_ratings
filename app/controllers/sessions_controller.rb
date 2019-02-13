@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
+    flash.notice = "Mischief Managed"
     redirect_to login_path
   end
 

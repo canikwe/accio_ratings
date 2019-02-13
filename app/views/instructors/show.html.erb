@@ -1,16 +1,23 @@
 <h1><%= @instructor.name %></h1>
 
-<table>
-  <tr>
-    <th>Subject</th>
-    <th>Year</th>
-    <th>Average Overall Rating</th>
-  </tr>
-    <% @instructor.klasses.each do |k| %>
+<% if @instructor.klasses.any? %>
+  <table>
     <tr>
-      <td><%= link_to k.subject.name, subject_path(k.subject) %></td>
-      <td><%= link_to k.year, k %></td>
-      <td><%= k.average_overall %></td>
+      <th>Subject</th>
+      <th>Year</th>
+      <th>Average Overall Rating</th>
     </tr>
-    <% end %>
-</table>
+      <% @instructor.klasses.each do |k| %>
+      <tr>
+        <td><%= link_to k.subject.name, subject_path(k.subject) %></td>
+        <td><%= link_to k.year, k %></td>
+        <td><%= k.average_overall %></td>
+      </tr>
+      <% end %>
+  </table>
+<% else %>
+  There are no classes yet for this instructor <br>
+  <%= link_to "Create one now!", new_klass_path %>
+<% end %><p></p>
+
+<%= link_to "All Instructors", instructors_path %>

@@ -1,0 +1,12 @@
+
+<%= form_for @student do |f| %>
+    <%= f.label :first_name, "First Name:"  %>
+    <%= f.text_field :first_name %><br>
+    <%= f.label :last_name, "Last Name:" %>
+    <%= f.text_field :last_name  %><br>
+    <%= f.label :username, "Username:"%>
+    <%= f.text_field :username %><br>
+    <%= f.label :grad_year, "Graduation Year:"%>
+    <%= f.select :grad_year, (1986..Time.now.year+10)%><br>
+    <%= f.submit %>
+<% end %>

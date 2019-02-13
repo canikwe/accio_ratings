@@ -2,6 +2,7 @@ class KlassesController < ApplicationController
   before_action :rootmaker
 
   def show
+    # byebug
     @klass = Klass.find(params[:id])
     @klass_reviews = @klass.reviews.select {|r| r.id}
   end

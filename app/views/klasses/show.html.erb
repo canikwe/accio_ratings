@@ -1,26 +1,30 @@
 <h1><%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %> | <%= link_to @klass.subject.name, subject_path(@klass.subject) %> | <%= @klass.year  %></h1>
 
-<table>
-  <tr>
-    <td>Overall</td>
-    <td><%= @klass.average_overall %></td>
-  </tr>
-  <tr>
-    <td>Difficulty</td>
-    <td><%= @klass.average_diff %></td>
-  </tr>
-  <tr>
-    <td>Intrigue</td>
-    <td><%= @klass.average_intr %></td>
-  </tr>
-  <tr>
-    <td>Would Recommend</td>
-    <td><%= @klass.average_rec %></td>
-  </tr>
-</table>
+<% if !@klass.reviews.empty? %>
+  <table>
+    <tr>
+      <td>Overall</td>
+      <td><%= @klass.average_overall %></td>
+    </tr>
+    <tr>
+      <td>Difficulty</td>
+      <td><%= @klass.average_diff %></td>
+    </tr>
+    <tr>
+      <td>Intrigue</td>
+      <td><%= @klass.average_intr %></td>
+    </tr>
+    <tr>
+      <td>Would Recommend</td>
+      <td><%= @klass.average_rec %></td>
+    </tr>
+  </table>
+  <% else %>
+  No reviews yet for this class.
+  <% end %>
 
 <hr>
-<% if @klass.reviews.length == 0 %>
+<% if !@klass.reviews.any? %>
 <h2>Be the first to review this class!</h2>
 <% else  %>
 <h2>Submit a review for this class</h2>
@@ -43,6 +47,8 @@
   <%= f.submit "Submit Review"%>
 <% end %>
 
-<% if @klass.reviews.length != 0 %>
+<% if @klass.reviews[0].title %>
   <%= render 'review_list' %>
+  <% else %>
+
 <% end  %>
