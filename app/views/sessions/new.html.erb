@@ -1,13 +1,46 @@
-<h1>I solemnly swear that I am up to no good</h1>
+<div class="container jumbotron" id="center-div">
 
-<div class="error"><%= flash["notice"] %></div>
 
-<%= form_tag '/login' do %>
-  <%= label_tag :username, "Username:" %>
-  <%= text_field_tag :username %><br>
-  <%= label_tag :password, "Password:" %>
-  <%= password_field_tag :password %><br>
-  <%= submit_tag "Login" %>
+<div class="row justify-content-md-center">
+  <h1>I solemnly swear that I am up to no good</h1>
+</div>
+
+<div class="row justify-content-md-center">
+  <%= flash["notice"] %>
+</div>
+<div class="row justify-content-md-center">
+  <%= form_tag '/login' do %>
+
+<div class="row">
+
+  <div class="col-sm-4">
+      <%= label_tag :username, "Username:" %>
+  </div>
+  <div class="col-sm-4">
+      <%= text_field_tag :username %><br>
+  </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <%= label_tag :password, "Password:" %>
+    </div>
+
+      <div class="col-sm-4">
+      <%= password_field_tag :password %><br>
+      </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <%= submit_tag "Login" %>
+  </div>
 <% end %>
+</div>
+<div class="row justify-content-md-center">
+  <p>Don't have an account? <%= link_to "Sign up here!", new_student_path %> </p>
+</div>
 
-<p>Don't have an account? <%= link_to "Sign up here!", new_student_path %> </p>
+</div>
+</div>

@@ -14,3 +14,16 @@
  *= require_self
  */
 @import "bootstrap";
+
+.container .jumbotron{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#center-div {
+  margin: 0 auto;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  width: 30rem;
+}
