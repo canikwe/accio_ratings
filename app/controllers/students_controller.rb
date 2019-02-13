@@ -1,4 +1,4 @@
-reqiure "spec_helper"
+# require 'spec_helper'
 
 class StudentsController < ApplicationController
 
