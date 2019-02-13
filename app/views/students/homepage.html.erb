@@ -1,27 +1,47 @@
-<ul>
+<!-- <ul>
   <li><%= link_to current_student.full_name, student_path(current_student) %></li>
   <li><%= link_to "Subjects", subjects_path %></li>
   <li><%= link_to "Instructors", instructors_path %></li>
   <li><%= link_to "Logout", logout_path, method: :delete %></li>
-</ul>
+</ul> -->
 
-<h2>Recently Reviewed</h2>
-<ul>
-  <% Review.recents.each do |r| %>
-    <li><%= "#{r.created_at.strftime("%b %e, %l:%m %p") } | #{r.title} - #{r.klass.instructor.name} - #{r.klass.subject.name} "%></li>
-    <ul>
-      <li><%= r.content.truncate(50) %></li>
-    </ul>
-    <% end %>
-</ul>
+<div class="container">
+  <div class="row">
 
-<h2>Most Reviewed Classes</h2>
 
-<ul>
-  <% Klass.most_frequent.each do |k| %>
-    <li><%= "#{k.instructor.name},  #{k.subject.name}, #{k.year}"%></li>
-    <ul>
-      <li><%=link_to k.reviews.length, k%> reviews</li>
-    </ul>
-    <% end %>
-</ul>
+    <div class="col-sm">
+      <h2>Recently Reviewed</h2>
+
+      <div class="list-group">
+        <% Review.recents.each do |r| %>
+          <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><%= "#{r.title} | #{r.klass.instructor.name} | #{r.klass.subject.name} "%></h5>
+              <small><%= r.created_at.strftime("%b %e, %l:%m %p") %></small>
+            </div>
+            <p class="mb-1"><%= r.content.truncate(50) %></p>
+          </a>
+        <% end %>
+      </div>
+
+
+    </div>
+
+
+    <div class="col-sm">
+      <h2>Most Reviewed Classes</h2>
+
+      <ul>
+        <% Klass.most_frequent.each do |k| %>
+          <li><%= "#{k.instructor.name},  #{k.subject.name}, #{k.year}"%></li>
+          <ul>
+            <li><%=link_to k.reviews.length, k%> reviews</li>
+          </ul>
+          <% end %>
+      </ul>
+
+    </div>
+
+
+  </div>
+</div>
