@@ -1,27 +1,46 @@
-<h1><%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %> | <%= link_to @klass.subject.name, subject_path(@klass.subject) %> | <%= @klass.year  %></h1>
+<div class="container">
+  <div class="">
 
-<% if !@klass.reviews.empty? %>
-  <table>
-    <tr>
-      <td>Overall</td>
-      <td><%= @klass.average_overall %></td>
-    </tr>
-    <tr>
-      <td>Difficulty</td>
-      <td><%= @klass.average_diff %></td>
-    </tr>
-    <tr>
-      <td>Intrigue</td>
-      <td><%= @klass.average_intr %></td>
-    </tr>
-    <tr>
-      <td>Would Recommend</td>
-      <td><%= @klass.average_rec %></td>
-    </tr>
-  </table>
+    <h1><%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %> | <%= link_to @klass.subject.name, subject_path(@klass.subject) %> | <%= @klass.year  %></h1>
+
+    <% if !@klass.reviews.empty? %>
+      <table>
+        <tr>
+          <td>Overall</td>
+          <td><%= @klass.average_overall %></td>
+        </tr>
+        <tr>
+          <td>Difficulty</td>
+          <td><%= @klass.average_diff %></td>
+        </tr>
+        <tr>
+          <td>Intrigue</td>
+          <td><%= @klass.average_intr %></td>
+        </tr>
+        <tr>
+          <td>Would Recommend</td>
+          <td><%= @klass.average_rec %></td>
+        </tr>
+      </table>
+      <% else %>
+      No reviews yet for this class.
+      <% end %>
+
+</div>
+
+<div class="">
+
+<hr>
+
+  <% if @klass.reviews[0].title %>
+  <%= render 'review_list' %>
   <% else %>
-  No reviews yet for this class.
-  <% end %>
+
+  <% end  %>
+
+</div>
+
+<div class="">
 
 <hr>
 <% if !@klass.reviews.any? %>
@@ -46,9 +65,7 @@
   <%= f.text_area :content %><br><br>
   <%= f.submit "Submit Review"%>
 <% end %>
+</div>
 
-<% if @klass.reviews[0].title %>
-  <%= render 'review_list' %>
-  <% else %>
-
-<% end  %>
+</div>
+</div>
