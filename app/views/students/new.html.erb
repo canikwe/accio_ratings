@@ -1,4 +1,8 @@
-<h1>Create a new user or <%= link_to "login", login_path %></h1>
+<div class="container jumbotron" id="center-div">
+
+<div class="row justify-content-md-center">
+<h1>Create a new user!</h1>
+</div>
 
 <% if @student.errors.any? %>
   <div id="error_explanation">
@@ -30,3 +34,5 @@
     <%= f.password_field :password_confirmation %><br>
     <%= f.submit %>
 <% end %>
+
+</div>
