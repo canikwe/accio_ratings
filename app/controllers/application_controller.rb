@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_student
 
-  
-  def rootmaker
 
+  def rootmaker
     if session[:student_id].nil?
       redirect_to login_path
     end
