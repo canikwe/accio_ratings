@@ -9,6 +9,9 @@
 <ul>
   <% Review.recents.each do |r| %>
     <li><%= "#{r.created_at.strftime("%b %e, %l:%m %p") } | #{r.title} - #{r.klass.instructor.name} - #{r.klass.subject.name} "%></li>
+    <ul>
+      <li><%= r.content.truncate(50) %></li>
+    </ul>
     <% end %>
 </ul>
 

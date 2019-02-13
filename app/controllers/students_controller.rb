@@ -30,11 +30,14 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    # renders profile edit page
+    if current_student.id != @student.id
+      redirect_to current_student
+    end
+    # renders profile edit page for current student only
   end
 
   def update
-    if @student.save(student_params)
+    if @student.update(student_params)
       redirect_to @student
     else
       render :edit
