@@ -18,21 +18,72 @@
     </ul>
   </div>
 <% end %>
+<div class="row justify-content-md-center">
+
+
 
 <%= form_for @student do |f| %>
+<div class="row">
+
+  <div class="col-sm-4">
     <%= f.label :first_name, "First Name:"  %>
+  </div>
+
+  <div class="col-sm-4">
     <%= f.text_field :first_name %><br>
-    <%= f.label :last_name, "Last Name:" %>
-    <%= f.text_field :last_name  %><br>
-    <%= f.label :username, "Username:"%>
-    <%= f.text_field :username %><br>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-sm-4">
+  <%= f.label :last_name, "Last Name:" %>
+  </div>
+
+  <div class="col-sm-4">
+  <%= f.text_field :last_name  %><br>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-4">
+  <%= f.label :username, "Username:"%>
+  </div>
+
+  <div class="col-sm-4">
+  <%= f.text_field :username %>
+  </div>
+
+</div>
+
     <%= f.label :grad_year, "Graduation Year:"%>
     <%= f.select :grad_year, (1986..Time.now.year+10)%><br>
-    <%= f.label :password, "Password:"%>
-    <%= f.password_field :password %><br>
-    <%= f.label :password_confirmation, "Confirm Password:"%>
-    <%= f.password_field :password_confirmation %><br>
+
+    <div class="row">
+      <div class="col-sm-4">
+<%= f.label :password, "Password:"%>
+      </div>
+      <div class="col-sm-4">
+        <%= f.password_field :password %>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <%= f.label :password_confirmation, "Confirm Password:"%>
+      </div>
+      <div class="col-sm-4">
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
     <%= f.submit %>
 <% end %>
 
+
+</div>
+<div class="row justify-content-md-center" id= "toppad">
+  <span>Already have an account?  <%= link_to "Login", login_path %></span>
+</div>
+</div>
 </div>

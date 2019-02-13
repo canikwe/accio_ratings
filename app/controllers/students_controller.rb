@@ -3,7 +3,7 @@
 class StudentsController < ApplicationController
 
   before_action :get_student, only: [:show, :destroy, :edit, :update]
-  before_action :rootmaker, except: :new
+  before_action :rootmaker, except: [:new, :create]
 
   def show
   end
@@ -44,6 +44,12 @@ class StudentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @student.delete
+    session.clear
+    redirect_to login_path
   end
 
   private

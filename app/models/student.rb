@@ -12,7 +12,7 @@ class Student < ApplicationRecord
   validates :password, presence: true, on: :create
   validates :password, length: {in: 4..20}, on: :create
   validates :grad_year, numericality: {only_integer: true}
-  validates :grad_year, inclusion: {in: (1990..Time.now.year+10)}
+  validates :grad_year, inclusion: {in: (1986..Time.now.year+10)}
 
 
   has_secure_password
