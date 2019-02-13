@@ -1,21 +1,24 @@
-<h1>All Instructors</h1>
+<div class="container">
+<h1>All Instructors   <span class="btn btn-light btn-sm">
+    <%= link_to "Create New Instructor", new_instructor_path %>
+  </span></h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Avg Class Rating</th>
-  </tr>
-  <% @instructor.each do |inst| %>
+
+  <table class="table table-hover">
     <tr>
-      <td><%= link_to inst.name, inst %></td>
-      <% if inst.rating %>
-      <td><%= inst.rating.round(2) %></td>
-    <% else %>
-      <td>--</td>
-      <% end %>
+      <th>Name</th>
+      <th>Avg Class Rating</th>
     </tr>
-  <% end %>
-</table>
-
-<hr>
-<%= link_to "Create New Instructor", new_instructor_path %>
+    <% @instructors.each do |inst| %>
+      <tr>
+        <td><%= link_to inst.name, inst %></td>
+        <% if inst.rating %>
+        <td><%= inst.rating.round(2) %></td>
+      <% else %>
+        <td>--</td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+</div>
