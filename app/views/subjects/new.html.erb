@@ -1,10 +1,10 @@
+<div class="container jumbotron" id="center-div">
+
+  <div class="row justify-content-md-center">
 <h1>Create New Subject</h1>
 
 <%= render 'shared/errors', input: @subject %>
+<%= render 'subject_form', input: @subject %>
 
-<%= form_for @subject do |f| %>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %><p></p>
-
-  <%= f.submit %>
-<% end %>
+</div>
+</div>
