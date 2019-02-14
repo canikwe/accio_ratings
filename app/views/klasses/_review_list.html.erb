@@ -1,26 +1,19 @@
 <h3>Reviews</h3>
 
   <div class="list-group">
+    <table>
     <% @klass_reviews.each_with_index do |r, ind| %>
-      <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
-        <%= r.title %>
-        <table>
-          <tr>
-            <th>Overall</th>
-            <th>Difficulty</th>
-            <th>Intrigue</th>
-            <th>Would Recommend</th>
-          </tr>
 
-          <tr>
-            <td>Overall: <%= r.overall %> |</td>
-            <td>Difficulty:   <%= r.difficulty %> |</td>
-            <td>Intrigue: <%= r.intrigue %> |</td>
-            <td>Would Recommend?  <%= r.recommendation %></td>
-          <small><%= link_to "Show All", r %></small>
-          </tr>
-        </table>
+      <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
+        <strong><%= "#{r.student.full_name} -- #{r.title}" %></strong>
+        <p></p>
+          Overall: <%= r.overall %> |
+          Difficulty:   <%= r.difficulty %> |
+          Intrigue: <%= r.intrigue %> |
+          Would Recommend?  <%= r.recommendation %>
+          <small><%= link_to "Read More", r %></small>
+
       </a>
     <% end %>
-
+    </table
   </div>

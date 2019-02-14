@@ -15,7 +15,7 @@ class Klass < ApplicationRecord
     if overall.empty?
       "--"
     else
-      overall.inject(:+).to_f / overall.count
+      (overall.inject(:+).to_f / overall.count).round(2)
     end
   end
 
@@ -24,7 +24,7 @@ class Klass < ApplicationRecord
     if diff.empty?
       "--"
     else
-    diff.inject(:+).to_f / diff.count
+    (diff.inject(:+).to_f / diff.count).round(2)
     end
   end
 
@@ -33,7 +33,7 @@ class Klass < ApplicationRecord
     if intr.empty?
       "--"
     else
-      intr.inject(:+).to_f / intr.count
+      (intr.inject(:+).to_f / intr.count).round(2)
     end
   end
 
@@ -42,7 +42,7 @@ class Klass < ApplicationRecord
     if rec.empty?
       "--"
     else
-      rec.inject(:+).to_f / rec.count
+      (rec.inject(:+).to_f / rec.count).round(2)
     end
   end
 

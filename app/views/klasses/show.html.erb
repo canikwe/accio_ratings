@@ -1,14 +1,20 @@
 <div class="container">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col">
         <h1><%= link_to @klass.subject.name, subject_path(@klass.subject) %>, <%= @klass.year  %></h1>
         <h3>Taught by: <%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %></h3>
-      <div class="">
+      <div class="d-flex justify-content-center">
 
 
 
         <% if !@klass.reviews.empty? %>
-          <table>
+          <table class="table table-sm table-dark" id="klass-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Rating</th>
+              </tr>
+              </thead>
             <tr>
               <td>Overall</td>
               <td><%= @klass.average_overall %></td>

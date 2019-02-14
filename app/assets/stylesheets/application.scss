@@ -61,18 +61,61 @@ h1, h2, h3 {
   font-family: 'Flamenco', cursive;
   font-weight: bold;
   color: #fed700;
+  text-shadow: 2px 2px 4px #000000;
+
 }
 
 .list-group-item {
   background-color: #ffffffb3;
 }
 
-.table {
+#index-tables {
   background-color: #ffffff63;
   width: inherit;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   justify-content: center;
+  border-radius: 1em;
+  border-top: none;
+}
+
+.review_form {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+    background-color: #ffffffb3;
+    padding: 0.75rem 1.25rem;
+    padding-top: 0.75rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-top-color: rgba(0, 0, 0, 0.125);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.125);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.125);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgba(0, 0, 0, 0.125);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    box-sizing: border-box;
+    width: 60%;
+    color: #495057;
+    text-align: inherit;
+}
+
+#klass-table {
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 1em;
 }
 
