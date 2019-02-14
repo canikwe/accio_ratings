@@ -111,6 +111,7 @@ h1, h2, h3 {
     width: 100%;
     color: #495057;
     text-align: inherit;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #klass-table {
@@ -124,4 +125,8 @@ body {
   background-image: url("http://www.itaniumsolutions.org/pics/max/49/495181_reset-wallpaper.png");
   background-size: 100%;
   background-attachment: fixed;
+}
+
+#student_buttons {
+  margin: .5em;
 }
