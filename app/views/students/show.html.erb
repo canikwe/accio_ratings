@@ -1,10 +1,12 @@
+
+<div class="container table-responsive">
 <h1><%= @student.full_name %></h1>
 
-Class of: <%= @student.grad_year %>
+<h2>Class of: <%= @student.grad_year %></h2>
 
 <h3>Reviews:</h3>
+<table class = "table table-hover" id="index-tables">
 
-<table>
   <tr>
     <th>Title</th>
     <th>Teacher/Subject</th>
@@ -20,6 +22,8 @@ Class of: <%= @student.grad_year %>
 </table><br>
 
 <% if @student.id == current_student.id %>
-  <%= link_to "Edit Profile", edit_student_path(@student)%> | <%= link_to "Delete Profile", @student, method: :delete, data:{ confirm: 'Are you sure?'}%> | <%= link_to "Logout", logout_path, method: :delete %>
+    <span class="btn btn-light btn-md"><%= link_to "Edit Profile", edit_student_path(@student)%> </span> <span class="btn btn-light btn-md"><%= link_to "Delete Profile", @student, method: :delete, data:{ confirm: 'Are you sure?'}%></span> <span class="btn btn-light btn-md"><%= link_to "Logout", logout_path, method: :delete %></span>
 <% else %>
 <% end %>
+
+</div>
