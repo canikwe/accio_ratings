@@ -1,4 +1,11 @@
+<div class="container jumbotron" id="center-div">
+  <div class="row justify-content-md-center">
+  <h1>Edit your review</h1>
+  </div>
+
 <div class="error"><%= flash["notice"] %></div>
+
+<div class="row justify-content-md-center">
 
 
 <%= form_for @review do |f|%>
@@ -17,3 +24,6 @@
   <%= f.text_area :content %><br><br>
   <%= f.submit %>
 <% end %>
+
+</div>
+</div>
