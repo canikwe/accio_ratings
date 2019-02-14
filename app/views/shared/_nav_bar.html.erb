@@ -23,7 +23,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to current_student.full_name, current_student, :class => "dropdown-item" %>
             <%= link_to "Log Out", logout_path, method: :delete, :class => "dropdown-item" %>
           </div>
