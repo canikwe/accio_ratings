@@ -14,6 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Flamenco|Griffy');
+
 
 .container .jumbotron{
   display: flex;
@@ -37,4 +39,40 @@
 
 .errorcolor{
   text-decoration-color: red;
+}
+
+// homepage
+.badge a {
+  color: #f8f9fa;
+}
+
+img {
+  width:100%;
+}
+
+// application layout
+.navbar-brand {
+  font-family: 'Griffy', cursive;
+  font-size: 2em;
+}
+
+h1, h2, h3 {
+  font-family: 'Flamenco', cursive;
+  font-weight: bold;
+  color: #fed700;
+}
+
+.list-group-item {
+  background-color: #ffffffb3;
+}
+
+.table {
+  background-color: #ffffff63;
+}
+
+body {
+  font-family: 'Cantarell', sans-serif;
+  background-image: url("http://www.itaniumsolutions.org/pics/max/49/495181_reset-wallpaper.png");
+  background-size: 100%;
+  background-attachment: fixed;
 }

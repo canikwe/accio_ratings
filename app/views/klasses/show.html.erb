@@ -1,95 +1,50 @@
 <div class="container">
-  <div class="">
+  <div class="row">
+    <div class="col">
+        <h1><%= link_to @klass.subject.name, subject_path(@klass.subject) %>, <%= @klass.year  %></h1>
+        <h3>Taught by: <%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %></h3>
+      <div class="">
 
-    <h1><%= link_to @klass.instructor.name, instructor_path(@klass.instructor) %> | <%= link_to @klass.subject.name, subject_path(@klass.subject) %> | <%= @klass.year  %></h1>
 
-    <% if !@klass.reviews.empty? %>
-      <table>
-        <tr>
-          <td>Overall</td>
-          <td><%= @klass.average_overall %></td>
-        </tr>
-        <tr>
-          <td>Difficulty</td>
-          <td><%= @klass.average_diff %></td>
-        </tr>
-        <tr>
-          <td>Intrigue</td>
-          <td><%= @klass.average_intr %></td>
-        </tr>
-        <tr>
-          <td>Would Recommend</td>
-          <td><%= @klass.average_rec %></td>
-        </tr>
-      </table>
-      <% else %>
-      No reviews yet for this class.
-      <% end %>
 
-</div>
-
-<div class="">
-
-<hr>
-
-  <% if @klass.reviews.any? %>
-  <%= render 'review_list' %>
-  <% else %>
-
-  <% end  %>
-
-</div>
-
-<hr>
-
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-
-          <% if !@klass.reviews.any? %>
-            <h2>Be the first to review this class!</h2>
-          <% else  %>
-            <h2>Write a review for this class</h2>
+        <% if !@klass.reviews.empty? %>
+          <table>
+            <tr>
+              <td>Overall</td>
+              <td><%= @klass.average_overall %></td>
+            </tr>
+            <tr>
+              <td>Difficulty</td>
+              <td><%= @klass.average_diff %></td>
+            </tr>
+            <tr>
+              <td>Intrigue</td>
+              <td><%= @klass.average_intr %></td>
+            </tr>
+            <tr>
+              <td>Would Recommend</td>
+              <td><%= @klass.average_rec %></td>
+            </tr>
+          </table>
+          <% else %>
+          No reviews yet for this class.
           <% end %>
-    </button>
-  </h2>
-</div>
-<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-7">
-        <%= form_for @klass.reviews.build do |f| %>
-          <%= f.hidden_field :klass_id %>
-          <%= f.hidden_field :student_id, value: current_student.id %>
-          <%= f.label :title, "Title:" %>
-          <%= f.text_field :title %><br><br>
-          <%= f.label :overall, "Overall:" %>
-          <%= f.select :overall, (1..5) %><br><br>
-          <%= f.label :difficulty, "Difficulty: (1 is least difficult)" %>
-          <%= f.select :difficulty, (1..5) %><br><br>
-          <%= f.label :intrigue, "Intrigue:" %>
-          <%= f.select :intrigue, (1..5) %><br><br>
-          <%= f.label :recomendation, "How likely are you to recomend to a classmate?" %>
-          <%= f.select :recommendation, (1..5) %>
-      </div>
-      <div class="col-sm-5">
-          <%= f.label :content, "Write your review:" %><br><br>
-          <%= f.text_area :content %><br><br>
-          <%= f.submit "Submit Review"%>
-      </div>
-          <% end %>
-        </div>
 
+      </div>
 
+      <div class="">
+        <hr>
+          <% if @klass.reviews.any? %>
+            <%= render 'review_list' %>
+          <% else %>
+          <% end  %>
+      </div>
+
+      <div class="">
+        <hr>
+        <%= render 'review_form' %>
+      </div>
 
     </div>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
+  </div>
 </div>

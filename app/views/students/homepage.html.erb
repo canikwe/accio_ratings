@@ -2,8 +2,11 @@
 
 <div class="container">
   <div class="row">
-
-
+    <div class="col-lg">
+      <%= image_tag ("photo-1533462506003-13c20d204b58.jpeg") %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm">
       <h2>Recently Reviewed</h2>
 
@@ -11,7 +14,8 @@
         <% Review.recents.each do |r| %>
           <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1"><%= "#{r.title} | #{r.klass.instructor.name} | #{r.klass.subject.name} "%></h5>
+              <h5 class="mb-1"><%= "#{r.klass.subject.name} with #{r.klass.instructor.name} | #{r.klass.year}" %> <span> <%= "#{r.overall} out of 5 Overall" %></h5>
+
               <small><%= r.created_at.strftime("%b %e, %l:%m %p") %></small>
             </div>
             <p class="mb-1"><%= r.content.truncate(50) %></p>

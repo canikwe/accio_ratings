@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @student && @student.authenticate(params[:password])
       session[:student_id] = @student.id
-      redirect_to @student
+      redirect_to root_path
     else
       flash.notice = "Username and password do not match"
       render :new

@@ -50,4 +50,6 @@ class Klass < ApplicationRecord
     self.all.sort_by {|klass| klass.reviews.length}[-3..-1].reverse
   end
 
+
+
 end
