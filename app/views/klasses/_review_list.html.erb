@@ -1,7 +1,7 @@
-<h3>Reviews</h3>
+<h3>Reviews - Click to read more!</h3>
 
   <div class="list-group">
-    <table>
+
     <% @klass_reviews.each_with_index do |r, ind| %>
 
       <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
@@ -11,9 +11,7 @@
           Difficulty:   <%= r.difficulty %> |
           Intrigue: <%= r.intrigue %> |
           Would Recommend?  <%= r.recommendation %>
-          <small><%= link_to "Read More", r %></small>
-
-      </a>
+          </a>
     <% end %>
-    </table
+    
   </div>
