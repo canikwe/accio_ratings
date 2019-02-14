@@ -1,20 +1,77 @@
-<h2>Errors</h2>
-<%= render "shared/errors", input: @review %>
+
+<div class="container jumbotron" id="center-div">
+
+<div class="row">
+  <div class="col-sm-11">
+    <h2>Errors</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-ll">
+    <%= render "shared/errors", input: @review %>
+  </div>
+</div>
 
 <%= form_for @review do |f| %>
   <%= f.hidden_field :klass_id %>
   <%= f.hidden_field :student_id, value: current_student.id %>
-  <%= f.label :title, "Title:" %>
-  <%= f.text_field :title %><br><br>
-  <%= f.label :overall, "Overall:" %>
-  <%= f.select :overall, (1..5) %><br><br>
-  <%= f.label :difficulty, "Difficulty: (1 is least difficult)" %>
-  <%= f.select :difficulty, (1..5) %><br><br>
-  <%= f.label :intrigue, "Intrigue:" %>
-  <%= f.select :intrigue, (1..5) %><br><br>
-  <%= f.label :recomendation, "How likely are you to recomend to a classmate?" %>
-  <%= f.select :recommendation, (1..5) %><br><br>
-  <%= f.label :content, "Write your review:" %><br><br>
-  <%= f.text_area :content %><br><br>
-  <%= f.submit %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :title, "Title:" %>
+    </div>
+    <div class="col-md-7">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :overall, "Overall:" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.select :overall, (1..5) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :difficulty, "Difficulty: (1 is least difficult)" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.select :difficulty, (1..5) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :intrigue, "Intrigue:" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.select :intrigue, (1..5) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :recomendation, "How likely are you to recomend to a classmate?" %>
+    </div>
+    <div class="col-md-6">
+        <%= f.select :recommendation, (1..5) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <%= f.label :content, "Write your review:" %><br>
+      <%= f.text_area :content, size: "30x10" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-11">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
+
+</div>
