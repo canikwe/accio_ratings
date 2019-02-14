@@ -1,3 +1,7 @@
+<div class="container table-responsive">
+
+
+
 <h1><%= @subject.name %></h1>
 
 <% if @subject.klasses.length != 0 %>
@@ -7,4 +11,7 @@
   <%= link_to "Create one now!", new_klass_path %>
 <% end %><p></p>
 
-<%= link_to "All Subjects", subjects_path %>
+<span class="btn btn-light btn-md">
+  <%= link_to "All Subjects", subjects_path %>
+  </span>
+</div>
