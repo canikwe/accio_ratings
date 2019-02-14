@@ -1,38 +1,79 @@
 <div class="review_form">
 
-    <div class="" id="headingOne">
-      <h2 class="mb-0">
+  <div class="" id="headingOne">
+    <h2 class="mb-0">
 
-          <% if !@klass.reviews.any? %>
-            <h2>Be the first to review this class!</h2>
-          <% else  %>
-            <h2>Write a review for this class</h2>
-          <% end %>
-      </h2>
-    </div>
+        <% if !@klass.reviews.any? %>
+          <h2>Be the first to review this class!</h2>
+        <% else  %>
+          <h2>Write a review for this class</h2>
+        <% end %>
+    </h2>
+  </div>
 
 
-        <div class="row">
+  <div class="row">
+    <div class="col-sm-11">
+        <%= form_for @klass.reviews.build do |f| %>
+        <%= f.hidden_field :klass_id %>
+        <%= f.hidden_field :student_id, value: current_student.id %>
+          <div class="row">
+            <div class="col-md-3">
+              <%= f.label :title, "Title:" %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_field :title %>
+            </div>
+          </div>
 
-        <div class="col-sm-7">
-          <%= form_for @klass.reviews.build do |f| %>
-            <%= f.hidden_field :klass_id %>
-            <%= f.hidden_field :student_id, value: current_student.id %>
-            <%= f.label :title, "Title:" %>
-            <%= f.text_field :title %><br><br>
-            <%= f.label :overall, "Overall:"%>
-            <%= f.select :overall, (1..5) %><br><br>
-            <%= f.label :difficulty, "Difficulty: (1 is least difficult)"%>
-            <%= f.select :difficulty, (1..5) %><br><br>
-            <%= f.label :intrigue, "Intrigue:"%>
-            <%= f.select :intrigue, (1..5) %><br><br>
-            <%= f.label :recomendation, "How likely are you to recomend to a classmate?"%>
-            <%= f.select :recommendation, (1..5) %><br><br>
-            <%= f.label :content, "Write your review:" %><br>
-            <%= f.text_area :content, size: "30x10" %><br><br>
-            <%= f.submit "Submit Review"%>
-          <% end %>
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :overall, "Overall:" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.select :overall, (1..5) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :difficulty, "Difficulty: (1 is least difficult)" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.select :difficulty, (1..5) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :intrigue, "Intrigue:" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.select :intrigue, (1..5) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :recomendation, "How likely are you to recomend to a classmate?" %>
+            </div>
+            <div class="col-md-6">
+                <%= f.select :recommendation, (1..5) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10">
+              <%= f.label :content, "Write your review:" %><br>
+              <%= f.text_area :content, size: "30x10" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-11">
+              <%= f.submit %>
+            </div>
+          </div>
+        <% end %>
         </div>
-        </div>
-
+      </div>
 </div>
