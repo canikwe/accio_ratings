@@ -5,8 +5,10 @@ class Instructor < ApplicationRecord
 
   def rating
     if !self.klasses.empty?
-      rate = self.klasses.map {|k| k.average_overall}.select {|rating| rating.is_a?(Float)}
-      (rate.inject(:+)) / (rate.length)
+        rate = self.klasses.map {|k| k.average_overall}.select {|rating| rating.is_a?(Float)}
+        if !rate.empty?
+          (rate.inject(:+)) / (rate.length)
+        end
     end
   end
 end
