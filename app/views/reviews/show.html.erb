@@ -1,17 +1,55 @@
+<div class="container d-flex justify-content-center">
+
+<div class="row">
+<dv class="col">
 <h1><%= @review.title %></h1>
 <h2>By: <%= link_to @review.student.full_name, @review.student %></h2>
-<h3><%= @review.klass.subject.name %>, <%= @review.klass.year %> with <%=@review.klass.instructor.name%></h3>
+<h3><%= @review.klass.subject.name %>, <%= @review.klass.year %><br> with <%= link_to @review.klass.instructor.name, instructor_path(@review.klass.instructor)%></h3>
+<div class="review_form">
 
-<ul>
-  <li>Overall  <%= @review.overall %>/5</li>
-  <li>Difficulty <%= @review.difficulty %>/5  (5 is most difficult)</li>
-  <li>Intrigue <%= @review.intrigue %>/5</li>
-  <li>Would recomend? <%= @review.recommendation %>/5</li>
-</ul>
-<p><%= @review.content %></p>
 
-<% if @review.student.id == current_student.id %>
-  <%= link_to "Edit Review", edit_review_path(@review)%> | <%= link_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}%> |
-<% else %>
-<% end %>
-<%= link_to "Back to Class", @review.klass %>
+<div class="row">
+
+  <div class="col-sm-7">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Overall</td>
+          <td><%= @review.overall %>/5</td>
+        </tr>
+          <tr>
+            <td>Difficulty</td>
+            <td><%= @review.difficulty %>/5</td>
+          </tr>
+          <tr>
+            <td>Intrigue</td>
+            <td><%= @review.intrigue %>/5</td>
+          </tr>
+          <tr>
+            <td>Would Recommend</td>
+            <td><%= @review.recommendation %>/5</td>
+          </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p><%= @review.content %></p>
+  </div>
+
+      </div>
+      <div class="row">
+        <% if @review.student.id == current_student.id %>
+          <%= button_to "Edit Review", edit_review_path(@review), method: :get, class: "btn btn-light", id: "student_buttons" %>
+          <%= button_to "Delete Review", @review, method: :delete, data:{ confirm: 'Are you sure?'}, class: "btn btn-light", id: "student_buttons" %>
+        <% else %>
+        <% end %>
+        <%= button_to "Back to Class", @review.klass, method: :get, class: "btn btn-light", id: "student_buttons" %>
+      </div>
+    </div>
+  </div>
+</div>
