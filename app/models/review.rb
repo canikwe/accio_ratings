@@ -13,7 +13,4 @@ class Review < ApplicationRecord
     self.all.order(created_at: :desc)[0,5]
   end
 
-
-
-
 end

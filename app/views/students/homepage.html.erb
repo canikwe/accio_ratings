@@ -1,9 +1,4 @@
-<!-- <ul>
-  <li><%= link_to current_student.full_name, student_path(current_student) %></li>
-  <li><%= link_to "Subjects", subjects_path %></li>
-  <li><%= link_to "Instructors", instructors_path %></li>
-  <li><%= link_to "Logout", logout_path, method: :delete %></li>
-</ul> -->
+
 
 <div class="container">
   <div class="row">
@@ -25,14 +20,13 @@
       </div>
     </div>
 
-
     <div class="col-sm">
       <h2>Most Reviewed Classes</h2>
 
       <ul class="list-group">
         <% Klass.most_frequent.each do |k| %>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <%= "#{k.instructor.name},  #{k.subject.name}, #{k.year}"%>
+            <%= link_to "#{k.instructor.name},  #{k.subject.name}, #{k.year}", k %>
             <span class="badge badge-primary badge-pill"><%=link_to k.reviews.length, k %></span>
           </li>
         <% end %>

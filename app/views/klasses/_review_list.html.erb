@@ -1,36 +1,26 @@
 <h3>Reviews</h3>
 
-<!-- <table>
-  <tr>
-    <th>Title</th>
-    <th>Overall</th>
-    <th>Difficulty</th>
-    <th>Intrigue</th>
-    <th>Would Recommend</th>
-  </tr> -->
-
-  <div class="accordion" id="accordionExample">
+  <div class="list-group">
     <% @klass_reviews.each_with_index do |r, ind| %>
-      <div class="card">
-        <div class="card-header" id="heading<%=ind%>">
-          <h2 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%=ind%>" aria-expanded="false" aria-controls="collapse<%=ind%>">
-              <%= r.title %>
-              </button>
-            </h2>
-          </div>
+      <a href="<%= review_path(r) %>" class="list-group-item list-group-item-action">
+        <%= r.title %>
+        <table>
+          <tr>
+            <th>Overall</th>
+            <th>Difficulty</th>
+            <th>Intrigue</th>
+            <th>Would Recommend</th>
+          </tr>
 
-          <div id="collapse<%=ind%>" class="collapse show" aria-labelledby="heading<%=ind%>" data-parent="#accordionExample">
-            <div class="card-body">
-                Overall: <%= r.overall %> |
-                Difficulty:   <%= r.difficulty %> |
-                  Intrigue: <%= r.intrigue %> |
-                Would Recommend?  <%= r.recommendation %> |
-
-                <small><%= link_to "Show All", r %></small>
-              </div>
-            </div>
-          </div>
-  <% end %>
+          <tr>
+            <td>Overall: <%= r.overall %> |</td>
+            <td>Difficulty:   <%= r.difficulty %> |</td>
+            <td>Intrigue: <%= r.intrigue %> |</td>
+            <td>Would Recommend?  <%= r.recommendation %></td>
+          <small><%= link_to "Show All", r %></small>
+          </tr>
+        </table>
+      </a>
+    <% end %>
 
   </div>
