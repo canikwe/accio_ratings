@@ -47,7 +47,7 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    @student.delete
+    @student.destroy
     session.clear
     redirect_to login_path
   end

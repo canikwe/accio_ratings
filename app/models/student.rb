@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :klasses, through: :reviews, dependent: :destroy
+  
   validates :first_name, :last_name, :username, :grad_year, presence: true
   validates :first_name, length: {in: 1..15}
   validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }

@@ -49,6 +49,8 @@
 img {
   width:100%;
   border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 // application layout
@@ -62,7 +64,14 @@ h1, h2, h3 {
   font-weight: bold;
   color: #fed700;
   text-shadow: 2px 2px 4px #000000;
+}
 
+#fixed {
+  max-width: 600px;
+}
+
+.list-group {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .list-group-item {
