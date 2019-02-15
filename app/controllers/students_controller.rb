@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
     if @student.valid?
       @student.save
       session['student_id'] = @student.id
-      redirect_to student_path(@student)
+      redirect_to root_path
     else
       render :new
     end
